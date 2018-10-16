@@ -8,6 +8,9 @@ package pokemon;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.Queue;
+
 
 /**
  *
@@ -23,23 +26,44 @@ public class Pokemon {
     public static void main(String[] args) {
         // TODO code application logic here
         File file = new File("TestFile.txt");
-        
+        Queue<Character> q= new LinkedList<>();
         Computer cpu = new Computer();
+        String pat = "";
+        int i =0;
+        cpu.readFile(file);
         
-        cpu.storePatterns("This is a test Pattern1");
-        cpu.storePatterns("This is a test Pattern2");
-        cpu.storePatterns("This is a test Pattern2");
-        cpu.storePatterns("This is a test Pattern3");
-        cpu.storePatterns("This is a test Pattern3");
-        cpu.storePatterns("This is a test Pattern3");
+         q.add('f');
+         System.out.print(q.size());
+         q.add('w');
+         System.out.print(q.size());
+         q.add('g');
+         System.out.print(q.size());
+         q.add('w');
+         System.out.print(q.size());
+         q.add('f');
+        
+        for(char c:q){
+            pat+=c;
+        }
+        
+        
+        q.poll();
+        System.out.print(q.size());
+        q.add('g');
+        System.out.print(q.size());
+        
+        pat="";
+        
+         for(char c:q){
+            pat+=c;
+        }
+        
+        cpu.storePatterns(pat);
 
-        try{
-            cpu.saveMapToFile(file);
-        }
-        catch(FileNotFoundException e){   
-        }
-        catch(IOException e){
-        }
+
+        cpu.saveMapToFile(file);
+        
+            
     }
     
 }

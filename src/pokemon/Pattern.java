@@ -49,10 +49,7 @@ public class Pattern{
     @Override
     public boolean equals(Object o){
         if(o instanceof Pattern){
-            String str = ((Pattern)o).getPattern();
-            
-            System.out.print(str+", "+this.pattern+", :"+this.pattern.equals(str));
-            
+            String str = ((Pattern)o).getPattern();         
             return this.pattern.equals(str);
         }
         else
