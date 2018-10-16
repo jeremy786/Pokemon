@@ -35,10 +35,12 @@ public class Pattern{
      */
     @Override
     public int hashCode(){
+        //use default hashcode
         return this.pattern.hashCode();
     }
     
     public String toString(){
+        //use default tostring method
         return this.pattern.toString();
     }
     /**
@@ -48,7 +50,8 @@ public class Pattern{
      */
     @Override
     public boolean equals(Object o){
-        if(o instanceof Pattern){
+        //check if object is pattern
+        if(o instanceof Pattern){//Use pattern functions to extract string and check values
             String str = ((Pattern)o).getPattern();         
             return this.pattern.equals(str);
         }
